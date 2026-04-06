@@ -45,26 +45,20 @@
 				</header>
 
 				<p>
-					I'm a PhD student in the Electrical and Computer Engineering (ECE) department at Purdue University.
-					My work covers <b>satellite image change detection</b>, multivariate <b>time-series forecasting on sensor data</b>,
-					and <b>model compression for edge AI</b>.
+					I'm a PhD student in ECE at Purdue. My work covers satellite image change detection,
+					multivariate time-series forecasting on sensor data, and model compression for edge deployment.
 				</p>
 
 				<p>
-					AI is everywhere now, but most models are still too heavy for real-world use.
-					Foundation models eat memory and power, making them hard to run on constrained hardware.
-					I think efficiency is a core part of good engineering, not an afterthought.
-					That's the motivation behind my interest in model compression and efficient learning.
+					The thread connecting these is practicality. Foundation models are computationally expensive,
+					largely opaque, and rarely deployable outside data-center settings. I think efficiency and
+					interpretability are prerequisites for a model that can actually be used, not secondary concerns.
 				</p>
 
 				<p>
-					There's also a deeper issue: we don't really understand how models reason about time.
-					Methods for temporal modeling exist, but truly capturing dynamic scenes and evolving content
-					is still an open problem. That's the other thread running through my research.
-				</p>
-
-				<p>
-					Overall, I try to build <b>efficient and interpretable models</b> that actually hold up in the real world.
+					That shapes two directions in my research: making models leaner without sacrificing what they
+					have learned, and building representations that capture structured temporal and spatial
+					dependencies rather than shallow statistical patterns.
 				</p>
 				<!-- Problems of Interest -->
 <section id="problems">
@@ -73,36 +67,37 @@
   </header>
 
   <p>
-    Most of my research comes from a single observation: learning-based systems often fail in the wild,
-    not because they lack capability, but because they weren’t built with real constraints in mind.
+    My research is motivated by one constraint: models need to work in practice, not just on benchmarks.
+    That means being efficient enough to deploy on constrained hardware, interpretable enough to diagnose
+    failure, and structured enough to generalize. Accuracy alone is not sufficient.
   </p>
 
   <p>
-    The most immediate constraint is <b>computation</b>. Modern models are overparameterized and expensive.
-    Putting them on edge devices is genuinely hard. So I’m interested in figuring out what’s actually necessary
-    inside a model and what can be cut without hurting performance. This isn’t just about speed; it’s about
-    understanding what structure a model really needs.
+    <b>Efficient learning and model compression.</b> Overparameterization is the norm in modern deep networks.
+    I am interested in identifying which structural components are actually necessary, how redundancy can be
+    eliminated without performance loss, and whether inductive biases can substitute for learned parameters.
+    I treat compression as an architectural question, not a post-hoc engineering step.
   </p>
 
   <p>
-    Closely tied to this is the problem of <b>temporal reasoning</b>. Most systems I work with, satellite imagery,
-    sensor networks, evolve over time. Static models don’t handle that well. Even models that claim to do
-    temporal modeling often just pick up short-range correlations. I want to understand how information actually
-    propagates over time and how to build representations that reflect real causal structure.
+    <b>Temporal and spatial reasoning with semantics.</b> Sensor networks, satellite imagery streams, and other
+    real-world systems exhibit structured dynamics over time and space. Most sequence models reduce this to
+    short-range correlation. I am interested in representations that capture long-range dependencies and spatial
+    semantics, including the ability to disentangle meaningful change from nuisance factors like illumination
+    shift or sensor drift.
   </p>
 
   <p>
-    <b>Change understanding</b> fits naturally into this. In visual data, detecting that something changed is the
-    easy part. Knowing what changed, where, and why it matters is much harder. A lot of apparent changes are
-    just noise: lighting shifts, seasonal variation, sensor differences. Getting a model to focus on changes that
-    are semantically meaningful is a problem I work on directly.
+    <b>Graph-based learning.</b> Graphs provide a principled inductive bias for relational and structured data.
+    I apply GNNs to model cross-channel dependencies in multivariate time series and relational structure in
+    visual scenes, with applications in anomaly detection, forecasting, and change detection.
   </p>
 
   <p>
-    Finally, I think <b>classical signal processing</b> is underused. Decomposition methods and inverse problem
-    formulations bring interpretability and theoretical grounding that pure deep learning lacks. Combining these
-    with learned representations often gives you something more robust and more controllable. That combination
-    is something I find genuinely useful, not just interesting.
+    <b>Diffusion models and structured inference.</b> Diffusion models interest me beyond synthesis tasks.
+    Their connection to score-based and energy-based methods makes them a natural framework for structured
+    inference and inverse problems, particularly in settings where domain constraints can be incorporated
+    directly into the generative process.
   </p>
 </section>
 
