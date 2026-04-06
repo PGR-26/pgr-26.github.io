@@ -50,28 +50,28 @@
 				</p>
 
 				<p>
-					Foundation models have become the default substrate for most engineering tasks in AI.
-					But their widespread adoption has surfaced problems that go beyond benchmark performance.
-					The first is efficiency. Large VLMs and vision models require substantial compute even for inference.
+					Foundation models have become the default for most engineering tasks in computer vision and time series modeling.
+					But their widespread adoption has created new problems that go beyond a benchmark performance metric. 
+					While most academics focus on beating benchmarks in these fields, I believe that these new problems are more important than the bencmark metric.
+					The first is efficiency. Large VLMs and time series networks require substantial compute even for inference.
 					Deploying them on resource-constrained hardware demands more than compression heuristics.
 					It requires understanding which representations and computations are structurally necessary,
 					and which are redundant artifacts of how we train.
 				</p>
 
 				<p>
-					The second problem is physical and semantic grounding. VLMs acquire associations from
+					The second problem is semantic grounding. VLMs acquire associations from
 					image-text co-occurrence, but co-occurrence is not understanding. Human perception is
-					grounded in an implicit model of the physical world: 3D geometry, occlusion, causality,
-					material properties. Models trained on statistical associations lack these structural priors,
-					which is why they fail at tasks requiring geometric consistency or physical plausibility,
-					even when surface-level semantics appear correct.
+					grounded in a model of the physical world: 3D geometry, causality,
+					material properties etc. Models trained on statistical associations do NOT have these structural priors,
+					which is why they fail at many tasks requiring even when surface-level semantics appear correct.
 				</p>
 
 				<p>
 					The third is temporality. Most vision models treat each image in isolation. Real scenes evolve,
 					and understanding that evolution requires reasoning about how and why things change, not just
-					detecting that a difference exists. This extends to sensor-based systems where temporal
-					dependencies carry information about underlying dynamics that no single frame can reveal.
+					detecting that a difference exists from scene to scene. This extends to sensor-based systems where temporal
+					dependencies carry information about the underlying dynamics that no single frame can reveal.
 				</p>
 
 				<p>
@@ -89,11 +89,11 @@
   </p>
 
   <p>
-    <b>Efficient learning and model compression.</b> The dominant paradigm is to over-provision capacity and
+    <b>Efficient learning and model compression.</b> The trend is to give high capacity to the models and
     regularize. But this tells us little about what information a model actually needs. I am interested in
-    the problem of minimal sufficient representations: what is the minimum structural capacity required to
+    the problem of minimal sufficient representations: what is the minimum structural capacity(say number of parameters) required to
     solve a task, and what inductive biases can replace learned parameters without sacrificing performance?
-    Compression, from this view, is not just optimization. It is an inverse problem in representation design.
+    Compression, from this view, is not just optimization.
   </p>
 
   <p>
@@ -106,15 +106,15 @@
   </p>
 
   <p>
-    <b>Graph-based learning.</b> Many real-world signals are defined over relational structures that standard
+    <b>Graph-based learning.</b> Many real-world signals are defined over relational structures that recent
     architectures ignore. Multivariate sensor networks and spatial image graphs are natural candidates for
     GNNs, which encode relational inductive biases directly into the model rather than expecting the
     architecture to discover them from data.
   </p>
 
   <p>
-    <b>Diffusion models and structured inference.</b> Beyond synthesis, diffusion models provide a principled
-    framework for posterior inference through guided denoising. Their connection to score-based methods makes
+    <b>Diffusion models and structured inference.</b> Beyond synthesis, diffusion models provide a
+    framework for posterior inference through denoising. Their connection to score-based methods makes
     them applicable to inverse problems where the forward model is known, offering a way to incorporate domain
     constraints that purely discriminative approaches cannot.
   </p>
