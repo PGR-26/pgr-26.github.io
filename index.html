@@ -50,15 +50,32 @@
 				</p>
 
 				<p>
-					The thread connecting these is practicality. Foundation models are computationally expensive,
-					largely opaque, and rarely deployable outside data-center settings. I think efficiency and
-					interpretability are prerequisites for a model that can actually be used, not secondary concerns.
+					Foundation models have become the default substrate for most engineering tasks in AI.
+					But their widespread adoption has surfaced problems that go beyond benchmark performance.
+					The first is efficiency. Large VLMs and vision models require substantial compute even for inference.
+					Deploying them on resource-constrained hardware demands more than compression heuristics.
+					It requires understanding which representations and computations are structurally necessary,
+					and which are redundant artifacts of how we train.
 				</p>
 
 				<p>
-					That shapes two directions in my research: making models leaner without sacrificing what they
-					have learned, and building representations that capture structured temporal and spatial
-					dependencies rather than shallow statistical patterns.
+					The second problem is physical and semantic grounding. VLMs acquire associations from
+					image-text co-occurrence, but co-occurrence is not understanding. Human perception is
+					grounded in an implicit model of the physical world: 3D geometry, occlusion, causality,
+					material properties. Models trained on statistical associations lack these structural priors,
+					which is why they fail at tasks requiring geometric consistency or physical plausibility,
+					even when surface-level semantics appear correct.
+				</p>
+
+				<p>
+					The third is temporality. Most vision models treat each image in isolation. Real scenes evolve,
+					and understanding that evolution requires reasoning about how and why things change, not just
+					detecting that a difference exists. This extends to sensor-based systems where temporal
+					dependencies carry information about underlying dynamics that no single frame can reveal.
+				</p>
+
+				<p>
+					These three problems form the core of what I work on.
 				</p>
 				<!-- Problems of Interest -->
 <section id="problems">
@@ -67,37 +84,39 @@
   </header>
 
   <p>
-    My research is motivated by one constraint: models need to work in practice, not just on benchmarks.
-    That means being efficient enough to deploy on constrained hardware, interpretable enough to diagnose
-    failure, and structured enough to generalize. Accuracy alone is not sufficient.
+    My interests converge on problems where standard deep learning approaches fail for principled reasons,
+    not just empirical ones.
   </p>
 
   <p>
-    <b>Efficient learning and model compression.</b> Overparameterization is the norm in modern deep networks.
-    I am interested in identifying which structural components are actually necessary, how redundancy can be
-    eliminated without performance loss, and whether inductive biases can substitute for learned parameters.
-    I treat compression as an architectural question, not a post-hoc engineering step.
+    <b>Efficient learning and model compression.</b> The dominant paradigm is to over-provision capacity and
+    regularize. But this tells us little about what information a model actually needs. I am interested in
+    the problem of minimal sufficient representations: what is the minimum structural capacity required to
+    solve a task, and what inductive biases can replace learned parameters without sacrificing performance?
+    Compression, from this view, is not just optimization. It is an inverse problem in representation design.
   </p>
 
   <p>
-    <b>Temporal and spatial reasoning with semantics.</b> Sensor networks, satellite imagery streams, and other
-    real-world systems exhibit structured dynamics over time and space. Most sequence models reduce this to
-    short-range correlation. I am interested in representations that capture long-range dependencies and spatial
-    semantics, including the ability to disentangle meaningful change from nuisance factors like illumination
-    shift or sensor drift.
+    <b>Temporal and spatial reasoning with semantics.</b> Most sequence models are trained to minimize
+    prediction error over short horizons, which rewards capturing marginal statistics rather than the
+    underlying dynamical system. Genuine temporal reasoning requires models that represent state transitions,
+    causal dependencies, and long-range influence. In visual data, this extends to scene dynamics: not just
+    detecting change, but attributing it to a cause and separating it from confounds like illumination or
+    seasonal appearance shift.
   </p>
 
   <p>
-    <b>Graph-based learning.</b> Graphs provide a principled inductive bias for relational and structured data.
-    I apply GNNs to model cross-channel dependencies in multivariate time series and relational structure in
-    visual scenes, with applications in anomaly detection, forecasting, and change detection.
+    <b>Graph-based learning.</b> Many real-world signals are defined over relational structures that standard
+    architectures ignore. Multivariate sensor networks and spatial image graphs are natural candidates for
+    GNNs, which encode relational inductive biases directly into the model rather than expecting the
+    architecture to discover them from data.
   </p>
 
   <p>
-    <b>Diffusion models and structured inference.</b> Diffusion models interest me beyond synthesis tasks.
-    Their connection to score-based and energy-based methods makes them a natural framework for structured
-    inference and inverse problems, particularly in settings where domain constraints can be incorporated
-    directly into the generative process.
+    <b>Diffusion models and structured inference.</b> Beyond synthesis, diffusion models provide a principled
+    framework for posterior inference through guided denoising. Their connection to score-based methods makes
+    them applicable to inverse problems where the forward model is known, offering a way to incorporate domain
+    constraints that purely discriminative approaches cannot.
   </p>
 </section>
 
