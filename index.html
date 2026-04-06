@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="assets/css/custom.css" />
 	</head>
 
 	<body class="is-preload">
@@ -47,29 +48,26 @@
 				</header>
 
 				<p>
-					I am a PhD student in the Electrical and Computer Engineering (ECE) Department at Purdue University.
-					My work has involved <b>satellite image change detection</b>, multivariate <b>time-series forecasting on sensor data</b>,
-					and <b>model compression for edge AI.</b>
+					I'm a PhD student in the Electrical and Computer Engineering (ECE) department at Purdue University.
+					My work covers <b>satellite image change detection</b>, multivariate <b>time-series forecasting on sensor data</b>,
+					and <b>model compression for edge AI</b>.
 				</p>
 
 				<p>
-					Although AI and machine learning have become increasingly prominent, modern models <b>remain
-					inefficient for real-world edge deployment</b>. Large-scale systems such as ChatGPT require
-					significant computational power, memory, and energy, making them difficult to deploy in
-					resource-constrained environments. Engineers need to make things more efficienct - This is the reason behind my interest in model compression and
-					efficient learning strategies that preserve performance while reducing computational cost.
+					AI is everywhere now, but most models are still too heavy for real-world use.
+					Foundation models eat memory and power, making them hard to run on constrained hardware.
+					I think efficiency is a core part of good engineering, not an afterthought.
+					That's the motivation behind my interest in model compression and efficient learning.
 				</p>
-
 
 				<p>
-					At the same time, I believe we still lack a fundamental understanding of how models should
-					learn and reason about information over time (in other words, temporal reasoning). While many methods exist for temporal modeling,
-					truly understanding dynamic scenes and evolving visual content remains an open problem.
-					Through my research, I aim to contribute toward building models that better capture temporal
-					structure and can be deployed effectively on edge devices.
+					There's also a deeper issue: we don't really understand how models reason about time.
+					Methods for temporal modeling exist, but truly capturing dynamic scenes and evolving content
+					is still an open problem. That's the other thread running through my research.
 				</p>
-        <p>
-					Overall, I try to build <b>efficient and interpretable models</b> that can operate reliably in real-world environments.
+
+				<p>
+					Overall, I try to build <b>efficient and interpretable models</b> that actually hold up in the real world.
 				</p>
 				<!-- Problems of Interest -->
 <section id="problems">
@@ -78,40 +76,36 @@
   </header>
 
   <p>
-    My research interests are driven by fundamental problems that arise when deploying learning-based systems
-    in real-world, resource-constrained, and temporally evolving environments. Rather than focusing solely on
-    model performance in isolation, I am interested in understanding <b>why models fail</b>, <b>what information
-    they rely on</b>, and <b>how they can be made more efficient, interpretable, and reliable</b>.
+    Most of my research comes from a single observation: learning-based systems often fail in the wild,
+    not because they lack capability, but because they weren’t built with real constraints in mind.
   </p>
 
   <p>
-    One major problem I care about is <b>efficient learning under limited computational budgets</b>. Modern deep
-    learning models are often over-parameterized and expensive, making them unsuitable for edge deployment.
-    I am interested in identifying which components of a model are truly necessary, how redundancy can be reduced,
-    and how inductive structure can be imposed without sacrificing performance.
+    The most immediate constraint is <b>computation</b>. Modern models are overparameterized and expensive.
+    Putting them on edge devices is genuinely hard. So I’m interested in figuring out what’s actually necessary
+    inside a model and what can be cut without hurting performance. This isn’t just about speed; it’s about
+    understanding what structure a model really needs.
   </p>
 
   <p>
-    Another core challenge is <b>temporal reasoning and dependency modeling</b>. Many real-world systems—such as
-    satellite imagery streams and multivariate sensor data—exhibit complex temporal dependencies that are not
-    well captured by static models. I am interested in understanding how information propagates over time,
-    how causality and influence can be disentangled across channels, and how models can learn meaningful temporal
-    representations rather than short-term correlations.
+    Closely tied to this is the problem of <b>temporal reasoning</b>. Most systems I work with, satellite imagery,
+    sensor networks, evolve over time. Static models don’t handle that well. Even models that claim to do
+    temporal modeling often just pick up short-range correlations. I want to understand how information actually
+    propagates over time and how to build representations that reflect real causal structure.
   </p>
 
   <p>
-    I am also interested in the problem of <b>change understanding</b>, particularly in visual data. Beyond detecting
-    whether a change has occurred, I care about understanding <b>what changed</b>, <b>where it changed</b>, and
-    <b>why that change is meaningful</b>. This includes problems such as separating semantic changes from nuisance
-    factors like illumination or seasonal variation, and guiding models to focus on informative regions rather than
-    background noise.
+    <b>Change understanding</b> fits naturally into this. In visual data, detecting that something changed is the
+    easy part. Knowing what changed, where, and why it matters is much harder. A lot of apparent changes are
+    just noise: lighting shifts, seasonal variation, sensor differences. Getting a model to focus on changes that
+    are semantically meaningful is a problem I work on directly.
   </p>
 
   <p>
-    Finally, I am interested in <b>bridging classical signal processing with modern learning-based approaches</b>.
-    Many inverse problems and decomposition-based formulations offer interpretability and theoretical grounding
-    that purely data-driven models lack. I am motivated by problems where combining these perspectives can lead
-    to more robust, explainable, and controllable systems.
+    Finally, I think <b>classical signal processing</b> is underused. Decomposition methods and inverse problem
+    formulations bring interpretability and theoretical grounding that pure deep learning lacks. Combining these
+    with learned representations often gives you something more robust and more controllable. That combination
+    is something I find genuinely useful, not just interesting.
   </p>
 </section>
 

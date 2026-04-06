@@ -1,0 +1,145 @@
+/*
+ * custom.css
+ * Overrides for pgr-26.github.io
+ * - Top-down single-column layout (no fixed sidebar)
+ * - Black text on white background
+ * - Standard blue hyperlinks
+ */
+
+/* --- Colors --- */
+
+body, input, select, textarea {
+    color: #111;
+}
+
+a {
+    color: #1a0dab;
+    border-bottom-color: #1a0dab;
+}
+
+a:hover {
+    color: #1a0dab !important;
+    border-bottom-color: transparent;
+}
+
+strong, b {
+    color: #111;
+    font-weight: 600;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #111;
+}
+
+/* --- Top-down layout: override the fixed sidebar --- */
+
+#header {
+    background-color: #fff;
+    background-image: none;
+    color: #111;
+    left: auto;
+    top: auto;
+    position: relative;
+    width: 100%;
+    height: auto;
+    text-align: left;
+    padding: 3em 4em 2em 4em;
+    border-bottom: solid 2px #efefef;
+    display: block;
+    -moz-flex-direction: unset;
+    -webkit-flex-direction: unset;
+    flex-direction: unset;
+}
+
+#header strong, #header b {
+    color: #111;
+}
+
+#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
+    color: #111;
+}
+
+#header h1 {
+    color: #111;
+}
+
+#header a {
+    color: #1a0dab;
+}
+
+#header a:hover {
+    color: #1a0dab !important;
+}
+
+/* Buttons in header */
+#header .button {
+    color: #111 !important;
+    border-color: #ccc;
+}
+#header .button:hover {
+    border-color: #1a0dab;
+    color: #1a0dab !important;
+}
+
+/* Main content: no left margin, centered */
+#main {
+    margin-left: 0;
+    max-width: 60em;
+    padding: 4em;
+    width: 100%;
+}
+
+/* Button hover: blue instead of teal */
+.button:hover {
+    border-color: #1a0dab;
+    color: #1a0dab !important;
+}
+
+.button:active {
+    background-color: rgba(26, 13, 171, 0.08);
+    border-color: #1a0dab;
+    color: #1a0dab !important;
+}
+
+/* Footer: white background, visible text */
+#footer {
+    background-color: #fff;
+    background-image: none;
+    color: #666;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    padding: 2em 4em;
+    text-align: left;
+    border-top: solid 2px #efefef;
+}
+
+#footer .icons a {
+    color: #666;
+}
+
+#footer .icons a:hover {
+    color: #1a0dab;
+}
+
+#footer .copyright {
+    color: #999;
+}
+
+#footer .copyright a {
+    color: #999;
+}
+
+/* Responsive: keep layout sensible on smaller screens */
+@media screen and (max-width: 736px) {
+    #header {
+        padding: 2em 1.5em;
+    }
+    #main {
+        padding: 2em 1.5em;
+    }
+    #footer {
+        padding: 2em 1.5em;
+    }
+}
